@@ -57,7 +57,7 @@ export default function Credits() {
                 <p className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">Licenciatura en Informática • Universidad de Córdoba</p>
                 <div className="h-px bg-slate-100 my-2"></div>
                 <p className="text-xs text-slate-600 leading-relaxed italic">
-                  &ldquo;Nuestra misión es transformar conceptos técnicos complejos como la encapsulación ethernet en laboratorios visuales e intuitivos que empoderen a los futuros educadores de la región.&rdquo;
+                  &ldquo;Nuestro objetivo: Cerrar la brecha entre el desarrollo técnico y la implementación pedagógica. Integrando estratégicamente las TIC en entornos educativos para crear experiencias de aprendizaje que no solo sean digitales, sino verdaderamente significativas..&rdquo;
                 </p>
               </div>
             </div>

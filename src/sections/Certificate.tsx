@@ -25,11 +25,17 @@ export default function Certificate({ onBack }: { onBack: () => void }) {
       
       const dataUrl = await toPng(certificateRef.current, {
         quality: 1.0,
-        pixelRatio: 2, // High resolution
+        pixelRatio: 3, // Super high resolution
         backgroundColor: '#ffffff',
+        width: 840,
+        height: 594,
         style: {
-          transform: 'scale(1)',
-          transformOrigin: 'top left',
+          transform: 'none',
+          transformOrigin: 'unset',
+          margin: '0',
+          position: 'relative',
+          left: '0',
+          top: '0',
         }
       });
       

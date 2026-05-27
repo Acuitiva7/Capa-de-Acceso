@@ -30,6 +30,8 @@ import TrafficTypes from './sections/TrafficTypes';
 import QuizModule from './sections/QuizModule';
 import Credits from './sections/Credits';
 import Certificate from './sections/Certificate';
+import Landing from './sections/Landing';
+import ImmersiveIntro from './sections/ImmersiveIntro';
 
 const ICON_MAP: any = {
   BookOpen,
@@ -43,6 +45,7 @@ const ICON_MAP: any = {
 };
 
 export default function App() {
+  const [hasStarted, setHasStarted] = useState<'landing' | 'transition' | 'app'>('landing');
   const [activeSection, setActiveSection] = useState(SECTIONS[0]);
   const [completedSections, setCompletedSections] = useState<string[]>(['intro']);
   const [quizPassed, setQuizPassed] = useState(false);
@@ -81,6 +84,14 @@ export default function App() {
       window.scrollTo(0, 0);
     }
   };
+
+  if (hasStarted === 'landing') {
+    return <Landing onStart={() => setHasStarted('transition')} />;
+  }
+
+  if (hasStarted === 'transition') {
+    return <ImmersiveIntro onComplete={() => setHasStarted('app')} />;
+  }
 
   return (
     <div className="flex h-screen bg-slate-100 overflow-hidden font-sans text-slate-800">
