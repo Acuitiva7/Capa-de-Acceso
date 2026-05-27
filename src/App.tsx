@@ -18,6 +18,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { SECTIONS, QUIZ_QUESTIONS, Section } from './types';
+import unicorLogo from './assets/logo_unicordoba.jpg';
 
 // Components imported below
 import Introduction from './sections/Introduction';
@@ -86,8 +87,8 @@ export default function App() {
       <aside className="w-72 bg-unicordoba-green text-white flex flex-col shadow-2xl z-30">
         <div className="p-6 border-b border-unicordoba-green-dark">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <img src="https://www.unicordoba.edu.co/wp-content/uploads/2021/04/Escudo-Unicordoba.png" alt="Unicordoba" className="w-6 h-6 object-contain" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden border border-white/20">
+              <img src={unicorLogo} alt="Universidad de Córdoba" className="w-8 h-8 object-contain" />
             </div>
             <div>
               <h1 className="font-bold text-sm leading-tight text-white">Universidad de Córdoba</h1>

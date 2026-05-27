@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ChevronRight, Network } from 'lucide-react';
+import muelleImg from '../assets/img_1.png';
 
 export default function Introduction({ onNext }: { onNext: () => void }) {
   return (
@@ -18,9 +19,9 @@ export default function Introduction({ onNext }: { onNext: () => void }) {
 
       <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 group">
         <img 
-          src="https://images.unsplash.com/photo-1558494949-ef0109583a8e?auto=format&fit=crop&q=80&w=1200" 
-          alt="Network Logic" 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60"
+          src={muelleImg} 
+          alt="Muelle de Carga Digital" 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent flex items-end p-10">
           <div className="text-white max-w-md">

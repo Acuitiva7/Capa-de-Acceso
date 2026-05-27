@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Award, ChevronLeft, Download, Printer, User, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import unicorLogo from '../assets/logo_unicordoba.jpg';
 
 export default function Certificate({ onBack }: { onBack: () => void }) {
   const [studentName, setStudentName] = useState('');
@@ -63,13 +64,13 @@ export default function Certificate({ onBack }: { onBack: () => void }) {
         
         {/* Background Watermark */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-           <img src="https://www.unicordoba.edu.co/wp-content/uploads/2021/04/Escudo-Unicordoba.png" alt="" className="w-[500px]" />
+           <img src={unicorLogo} alt="" className="w-[500px]" />
         </div>
 
         <div className="h-full border-4 border-unicordoba-green/20 rounded flex flex-col items-center justify-between py-10 relative z-10">
           <header className="text-center space-y-2">
              <div className="flex justify-center items-center gap-4 mb-2">
-               <img src="https://www.unicordoba.edu.co/wp-content/uploads/2021/04/Escudo-Unicordoba.png" alt="Logo Unicordoba" className="h-16 object-contain" />
+               <img src={unicorLogo} alt="Logo Unicordoba" className="h-16 object-contain" />
                <div className="h-10 w-px bg-slate-200"></div>
                <img src="https://www.cisco.com/c/dam/en_us/about/ac123/ac147/img/cisco-logo.png" alt="Cisco Reference" className="h-10 opacity-70 object-contain" />
              </div>
