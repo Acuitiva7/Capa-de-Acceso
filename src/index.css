@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-unicordoba-green: #006D3E;
+  --color-unicordoba-green-dark: #004d2c;
+  --color-unicordoba-green-light: #008f51;
+  --color-unicordoba-gold: #eab308;
+  --color-unicordoba-gold-light: #facc15;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-100 text-slate-800 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-unicordoba-green text-white rounded-lg hover:bg-unicordoba-green-light transition-all duration-200 font-bold shadow-sm active:scale-95;
+  }
+  
+  .btn-gold {
+    @apply px-4 py-2 bg-unicordoba-gold text-green-950 rounded-lg hover:bg-unicordoba-gold-light transition-all duration-200 font-bold shadow-sm;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-200 p-6;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-sm font-medium;
+  }
+  
+  .sidebar-link-active {
+    @apply bg-unicordoba-green-dark text-white border-l-4 border-unicordoba-gold shadow-inner;
+  }
+  
+  .sidebar-link-inactive {
+    @apply text-green-50/80 hover:bg-unicordoba-green-light hover:text-white;
+  }
+
+  .progress-bg {
+    @apply w-full h-2.5 bg-slate-200/50 rounded-full overflow-hidden border border-slate-200;
+  }
+}
