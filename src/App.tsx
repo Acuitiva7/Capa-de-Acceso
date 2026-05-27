@@ -77,6 +77,7 @@ export default function App() {
     if (section) {
       setActiveSection(section);
       handleComplete(id);
+      setShowCertificate(false);
       window.scrollTo(0, 0);
     }
   };
@@ -102,7 +103,7 @@ export default function App() {
         </div>
 
         <nav className="flex-1 overflow-y-auto px-3 space-y-1">
-          {SECTIONS.filter(s => s.type !== 'credits' && s.id !== 'quiz').map((section) => {
+          {SECTIONS.filter(s => s.id !== 'credits' && s.id !== 'quiz').map((section) => {
             const Icon = ICON_MAP[section.icon];
             const isActive = activeSection.id === section.id;
             const isCompleted = completedSections.includes(section.id);
@@ -127,10 +128,11 @@ export default function App() {
 
           <div className="my-4 border-t border-unicordoba-green-dark/50"></div>
 
-          {/* Special Action Sections - Quiz Only as requested */}
-          {SECTIONS.filter(s => s.id === 'quiz').map((section) => {
+          {/* Special Action Sections - Quiz and Credits at the end of the menu */}
+          {SECTIONS.filter(s => s.id === 'quiz' || s.id === 'credits').map((section) => {
             const Icon = ICON_MAP[section.icon];
             const isActive = activeSection.id === section.id;
+            const isQuiz = section.id === 'quiz';
             
             return (
               <button
@@ -139,27 +141,22 @@ export default function App() {
                 className={`w-full sidebar-link ${
                   isActive 
                     ? 'sidebar-link-active' 
-                    : 'bg-unicordoba-gold text-green-950 hover:bg-unicordoba-gold-light'
+                    : isQuiz 
+                      ? 'bg-unicordoba-gold text-green-950 hover:bg-unicordoba-gold-light' 
+                      : 'sidebar-link-inactive'
                 } mt-2`}
               >
                 <div className="flex items-center gap-3 flex-1">
-                  <Icon size={16} />
-                  <span className="font-bold uppercase tracking-tighter">{section.title}</span>
+                  <Icon size={16} className={isActive ? 'text-unicordoba-gold' : isQuiz ? 'text-green-950' : 'text-green-300'} />
+                  <span className={isQuiz ? 'font-bold uppercase tracking-tighter' : ''}>{section.title}</span>
                 </div>
               </button>
             );
           })}
         </nav>
 
-        {/* Sidebar Footer with Credits Button */}
-        <div className="p-4 bg-unicordoba-green-dark border-t border-white/5 space-y-2.5">
-          <button 
-            onClick={() => navigateTo('credits')} 
-            className={`w-full text-left text-xs text-green-200 hover:text-white flex items-center gap-1.5 transition-colors ${activeSection.id === 'credits' ? 'font-black text-unicordoba-gold' : ''}`}
-          >
-            <Info size={14} className={activeSection.id === 'credits' ? 'text-unicordoba-gold' : 'text-green-300'} /> 
-            <span>Créditos de Adaptación</span>
-          </button>
+        {/* Sidebar Footer */}
+        <div className="p-4 bg-unicordoba-green-dark border-t border-white/5">
           <div className="text-[10px] leading-tight text-green-100/50 italic">
             Adaptado de Cisco © 2026. Todos los derechos reservados.<br/>
             Montería, Córdoba, Colombia.

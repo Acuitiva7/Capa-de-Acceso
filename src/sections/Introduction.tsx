@@ -13,7 +13,7 @@ export default function Introduction({ onNext }: { onNext: () => void }) {
           La Capa de <span className="text-unicordoba-green">Acceso</span>
         </h1>
         <p className="text-lg text-slate-500 leading-relaxed max-w-2xl font-medium">
-          Cómo se empaqueta, etiqueta y distribuye la información en las redes Ethernet modernas para la Licenciatura en Informática.
+          Aquí aprenderás cómo se empaqueta, etiqueta y distribuye la información en las redes Ethernet modernas.
         </p>
       </header>
 

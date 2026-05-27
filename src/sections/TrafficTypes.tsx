@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, User, Users, Globe, Monitor, Mail, Radio, Share2 } from 'lucide-react';
 
+import unicastImg from '../assets/images/unicast_illustration_1779902039984.png';
+import broadcastImg from '../assets/images/broadcast_illustration_1779902075201.png';
+import multicastImg from '../assets/images/multicast_illustration_1779902060055.png';
+
 const TRAFFIC = [
   { 
     id: 'unicast',
@@ -9,6 +13,7 @@ const TRAFFIC = [
     target: '1 a 1', 
     icon: User, 
     color: 'bg-blue-600', 
+    image: unicastImg,
     desc: 'Trama enviada de un origen a un único destino específico.', 
     example: 'Descargar un archivo de un servidor o enviar un correo.' 
   },
@@ -18,6 +23,7 @@ const TRAFFIC = [
     target: '1 a Todos', 
     icon: Globe, 
     color: 'bg-orange-600', 
+    image: broadcastImg,
     desc: 'Enviado a todas las estaciones del segmento (FF:FF:FF:FF:FF:FF).', 
     example: 'Solicitud ARP inicial para encontrar la MAC de un vecino.' 
   },
@@ -27,6 +33,7 @@ const TRAFFIC = [
     target: '1 a Grupo', 
     icon: Users, 
     color: 'bg-indigo-600', 
+    image: multicastImg,
     desc: 'Comunicación selectiva. Solo los dispositivos suscritos reciben la trama.', 
     example: 'Streaming de video corporativo o actualizaciones automáticas.' 
   },
@@ -262,6 +269,14 @@ export default function TrafficTypes({ onNext }: { onNext: () => void }) {
               <p className="text-xs font-bold uppercase tracking-widest opacity-70">{t.target}</p>
             </div>
             <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+              <div className="mb-4 rounded-xl overflow-hidden bg-slate-50 border border-slate-100 aspect-video flex items-center justify-center relative shadow-sm group-hover:shadow-md transition-shadow">
+                <img 
+                  src={t.image} 
+                  alt={`Diagrama de entrega ${t.title}`} 
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
               <p className="text-sm text-slate-600 mb-4">{t.desc}</p>
               <div className="pt-4 border-t border-slate-50">
                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Ejemplo</p>

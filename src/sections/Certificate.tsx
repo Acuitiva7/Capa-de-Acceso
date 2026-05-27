@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Award, ChevronLeft, Download, Printer, User, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import unicorLogo from '../assets/logo_unicordoba.jpg';
+import ciscoLogo from '../assets/cisco.png';
 
 export default function Certificate({ onBack }: { onBack: () => void }) {
   const [studentName, setStudentName] = useState('');
@@ -72,7 +73,7 @@ export default function Certificate({ onBack }: { onBack: () => void }) {
              <div className="flex justify-center items-center gap-4 mb-2">
                <img src={unicorLogo} alt="Logo Unicordoba" className="h-16 object-contain" />
                <div className="h-10 w-px bg-slate-200"></div>
-               <img src="https://www.cisco.com/c/dam/en_us/about/ac123/ac147/img/cisco-logo.png" alt="Cisco Reference" className="h-10 opacity-70 object-contain" />
+               <img src={ciscoLogo} alt="Cisco Reference" className="h-10 opacity-70 object-contain" />
              </div>
              <h4 className="text-lg md:text-xl font-bold text-slate-800 tracking-[0.25em] uppercase">Universidad de Córdoba</h4>
              <p className="text-xs font-semibold text-unicordoba-green tracking-[0.15em] uppercase">Facultad de Educación y Ciencias Humanas • Licenciatura en Informática</p>
