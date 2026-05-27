@@ -153,8 +153,8 @@ export default function QuizModule({ onPass, onShowCertificate }: { onPass: () =
                            className="flex items-center gap-2 text-green-700"
                          >
                            <span className="text-[10px] font-black uppercase tracking-widest hidden sm:inline">Correcto</span>
-                           <CheckCircle2 size={22} fill="currentColor" className="text-green-100" />
-                           <CheckCircle2 size={22} className="absolute text-green-600" />
+                           <CheckCircle2 size={22} className="text-green-600 fill-green-100 relative z-10 shrink-0 ml-1" />
+                           <CheckCircle2 size={0} className="hidden" />
                          </motion.div>
                        )}
                        {showResult && isSelected && !isCorrect && (
@@ -164,8 +164,8 @@ export default function QuizModule({ onPass, onShowCertificate }: { onPass: () =
                            className="flex items-center gap-2 text-red-700"
                          >
                            <span className="text-[10px] font-black uppercase tracking-widest hidden sm:inline">Incorrecto</span>
-                           <XCircle size={22} fill="currentColor" className="text-red-100" />
-                           <XCircle size={22} className="absolute text-red-600" />
+                           <XCircle size={22} className="text-red-600 fill-red-100 relative z-10 shrink-0 ml-1" />
+                           <XCircle size={0} className="hidden" />
                          </motion.div>
                        )}
                      </AnimatePresence>
